@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Javascipt HTML DOM</h2>
+    <p>Finding Elements Using<b> document.forms </b></p>
+    <form action="#" id="frm1">
+        First Name: <input type="text" name="firstname" value="Samikshya"><br>
+        Last Name: <input type="text" name="lastname" value="Nanda"><br><br>
+        <input type="submit" value="Submit" >
+    </form>
+
+    <p>These are the values of each element in the form:</p>
+
+    <p id="demo"></p>
+    <br>
+
+    <a href="#">sda</a>
+    <a href="#">dada</a>
+    
+    <div id="sans">
+    
+
+    <p id="reg"></p>
+
+
+    </div>
+
+    <script>
+    
+        const x=document.forms["frm1"];
+        let text="";
+        for(let i=0;i<x.length-1;i++){
+            text+=x[i].name + " is " + x[i].value + "<br>";
+        }
+        document.getElementById("demo").id = demo1;
+        
+    
+    
+    </script>
+</body>
+</html>

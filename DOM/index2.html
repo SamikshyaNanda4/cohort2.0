@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Javascipt HTML DOM</h2>
+    <p>Finding HTML Elements by Class Name.</p>
+    <p class="intro">Hello My name is Samikshya Nanda</p>
+   <p class="intro">I come from a small place called Sonepur. and this example demonstrates the <b>getElementByClassName </b>method.</p>
+   <p id="demo"></p>
+   <p class="demo">Finding HTML Elements by CLASS.</p>
+   <button onclick="deleteParagraph()"">COLOR ALL THE PARAGRAPHS ABOVE</button>
+   
+   <div id="sam" style="border: 1px;">
+    <h2 class="example">A Heading</h2>
+    <p class="example">A Paragraph</p>
+    <p class="example">Another Paragraph</p>
+    <h6 class="example">Another Heading</h6>
+    <p id="Siuuu">count the number of elements with example as class</p>
+   </div>
+
+
+
+
+   <script>
+    const x=document.getElementsByClassName("intro");
+    document.getElementById("demo").innerHTML= "The first Paragraph (index-0) with class=\"into\" is: "+ x[0].innerHTML + " And Second Paragraph (index-1) is: "+ x[1].innerHTML;
+   
+    function deleteParagraph(){
+    var y=document.querySelectorAll(".intro");
+    y.forEach(paragraph=>paragraph.style.backgroundColor='red');
+    var z=document.querySelectorAll("p#demo, p.demo");
+    z.forEach(changeColor=>changeColor.style.backgroundColor='green');
+   } 
+
+   let xyz=document.querySelectorAll(".example");
+   xyz.forEach(element=>element.style.backgroundColor='blue');
+   let sam=document.querySelector("#Siuuu");
+   sam.innerHTML=xyz.length;
+   sam.style.backgroundColor='yellow';
+
+   const nodeList=document.querySelectorAll("div>p");
+//    nodeList.forEach(element=>element.style.backgroundColor='orange');
+for(let i=0;i<nodeList.length;i++){
+    nodeList[i].style.backgroundColor='orange';
+}
+
+
+   </script>
+
+</body>
+</html>

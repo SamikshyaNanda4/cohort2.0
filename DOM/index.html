@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h1>Header</h1>
+    <p>Paragraph</p>
+    <form id="LoginForm" action="/www.google.com">
+        First Name: <input type="text" name="fname" value="Samikshya"><br>
+        Last Name: <input type="text" name="lname" value="Nanda"><br>
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <p>Click the "TRY IT" button to Display the number of elements in the form</p>
+
+    <button onclick="myFunction()">TRY IT</button>
+    <br>
+    <p id="displaying area/space"></p>
+
+    <div id="first" >Div One</div>
+    <p>Paragraph One</p>
+    <div>Div Two</div>
+    <p>Paragraph Two</p>
+    <div>Yet Another Div</div>
+
+    <script>
+    function myFunction(){
+        let x=document.getElementById("LoginForm").elements.length;
+        let y=document.getElementById("LoginForm").elements[0].value;
+        let z=document.getElementById("LoginForm").elements[1].value;
+        document.getElementById("displaying area/space").innerHTML="Found "+ x + " elements in the form and the first element is " + y + " and the last name is " + z;
+        const para=document.createElement("p");
+        para.innerText="THIS IS A NEW PARAGRAH CREATED AFTER THE INCLUSION OF TRY IT BUTTON";
+        //para.innerHTML ="xyz" will also work 
+        document.body.appendChild(para);
+
+        let div=document.getElementById("first");
+        let para2=document.createElement("p");
+        para2.innerHTML="Below div One .What i am hoping doe";
+        div.appendChild(para2);
+
+    }
+    </script>
+</body>
+</html> 
