@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS HTML Events</h1>
+    <h2>The onmouseover Attribute</h2>
+
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color: bisque; width: 120px; height: 20px; padding: 40px; border-radius: 3%; border-color: black; color: brown; border: 2px solid black;">
+        Mouse Over Me
+    </div>
+
+    <script>
+        function mOver(obj){
+            obj.style.width="160px";
+            obj.innerHTML="HAVE A GREAT DAY";
+        }
+        function mOut(obj){
+            obj.style.width="120px";
+            obj.innerHTML="Mouse Over Me";
+            
+        }
+
+
+
+    </script>
+</body>
+</html>
