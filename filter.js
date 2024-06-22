@@ -24,3 +24,5 @@ const ans=arr.filter((i)=>{
     return false
 });
 console.log(ans);
+
+
