@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SIMPLE CALCULATOR</h1>
+    ENTER NUMBER1  <input type="text" id="add1" placeholder="add number 1"><br>
+    ENTER NUMBER2 <input type="text" id="add2" placeholder="add number 2"><br>
+    <input type="submit" onclick="addIt()" id="addthem"><br>
+    <p id="DEMO"></p>
+
+    <script>
+       
+        function addIt(){
+            let num1 =document.getElementById("add1").value;
+            let num2=document.getElementById("add2").value;   
+            
+
+            let add=document.getElementById("DEMO")
+            add.innerHTML=parseInt(num1) + parseInt(num2);
+            // document.getElementById("DEMO").innerHTML="Hello World";
+
+        }  
+    </script>
+</body>
+</html>
