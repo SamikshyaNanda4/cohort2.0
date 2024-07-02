@@ -7,22 +7,39 @@
 </head>
 <body>
     <h1>SIMPLE CALCULATOR</h1>
-    ENTER NUMBER1  <input type="text" id="add1" placeholder="add number 1"><br>
-    ENTER NUMBER2 <input type="text" id="add2" placeholder="add number 2"><br>
-    <input type="submit" onclick="addIt()" id="addthem"><br>
+    ENTER NUMBER1  <input oninput="debounceAddIt()"  type="text" id="add1" placeholder="add number 1"><br>
+    ENTER NUMBER2 <input oninput="debounceAddIt()"  type="text" id="add2" placeholder="add number 2"><br>
+    
     <p id="DEMO"></p>
 
     <script>
        
+    // DEBOUNCING INTRODUCED
+       let timeout;
+        function debounceAddIt(){
+            //delay the call to populate dicv until i have not been called for 200 ms
+            clearTimeout(timeout);
+            timeout= setTimeout(function(){
+                addIt()
+            },1000
+            );
+
+            //how to you cancel a clock? clearTimeout()
+
+        }
         function addIt(){
             let num1 =document.getElementById("add1").value;
-            let num2=document.getElementById("add2").value;   
-            
-
-            let add=document.getElementById("DEMO")
-            add.innerHTML=parseInt(num1) + parseInt(num2);
-            // document.getElementById("DEMO").innerHTML="Hello World";
-
+            let num2=document.getElementById("add2").value;  
+            fetch("https://sum-server.100xdevs.com/sum?a="+ num1 + "&b=" + num2)
+            .then(function(response){
+                response.text()
+                .then(function(ans){
+                    document.getElementById("DEMO").innerHTML=ans;
+                    console.log(ans);
+                }
+            )
+            }
+         )      
         }  
     </script>
 </body>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INTEREST CALCULATOR</h1>
+
+        Input Principal<input type="text" id="principal" placeholder="Principal"><br>
+        Input Rate <input type="text" id="rate" placeholder="Rate"><br>
+        Input Years <input type="text" id="years" placeholder="Years"><br>
+        <input type="submit" id="submit" onclick="fetchInterest()" >
+
+        <p id="demo"></p>
+
+        <script>
+
+            async function fetchInterest(){
+            const prin=document.getElementById("principal").value;
+            const rate=document.getElementById("rate").value;
+            const year=document.getElementById("years").value;
+
+            fetch("https://sum-server.100xdevs.com/interest?principal="+ prin + "&rate=" + rate + "&time=" + year)
+            .then(function(response){
+                response.json()
+                .then(function(ans){
+                    document.getElementById("DEMO").innerHTML=ans;
+                    console.log(ans);
+                }
+            )
+            }
+         )      
+        }
+
+        </script>
+
+
+    </div>
+</body>
+</html>

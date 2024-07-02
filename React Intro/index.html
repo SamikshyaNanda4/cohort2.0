@@ -1,0 +1,67 @@
+<html>
+    <!-- <script>
+        function addTodo(){
+            const title =document.getElementById("title").value;
+            const description=document.getElementById("description").value;
+            console.log(title,description);
+          
+            const outerDiv=document.createElement("div");
+            outerDiv.innerHTML = `Title:<br> ${title}<br><br> Description:<br> ${description}<br><br> <button>Mark as Done</button> <br> <br>`;
+            document.getElementById("container").appendChild(outerDiv); 
+
+        //     document.getElementById("container").innerHTML=originalHTML +
+            
+        //     `title: <div>${title} <br><br> Description: <br>  ${description}
+        //         </div> <br> <button>Mark as Done</button> <br> <br>`;
+        // }
+        }
+    </script> -->
+
+    <script>
+        let globalId=1;
+
+        function markAsDone(todoId){
+            const parent =document.getElementById(todoId);
+            parent.children[2].innerHTML="Done!";
+        }
+
+        function createChild(title, description, id) {
+            const child=document.createElement("div");
+
+            const firstGrandChild=document.createElement("div");
+            firstGrandChild.innerHTML=`Title:<br><br> ${title}<br><br>`;
+
+            const secondGrandChild=document.createElement("div");
+            secondGrandChild.innerHTML=`Description:<br><br> ${description}<br><br>`;
+
+            const thirdGrandChild =document.createElement("button");
+            thirdGrandChild.innerHTML="Mark As Done ";
+            
+            thirdGrandChild.setAttribute("onclick",`markAsDone(${id})`);
+
+            child.appendChild(firstGrandChild);
+            child.appendChild(secondGrandChild);
+            child.appendChild(thirdGrandChild);
+
+            child.setAttribute("id",id);
+            return child;
+        }
+
+        function addTodo(){
+            const title= document.getElementById("title").value;
+            const description=document.getElementsById("description").value;
+            const id=globalId;
+            globalId++;
+            
+        }
+    </script>
+
+<div>
+    Yo  <input type="text" name="" id="title" placeholder="Title"><br>
+    So <input type="text" id="description" placeholder="Description"> </input><br>
+    <button onclick="addTodo()">Add todo</button>
+    <div id="container">
+   
+    </div>
+</div>
+</html>
