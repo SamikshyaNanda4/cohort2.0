@@ -35,7 +35,7 @@ validateInp({
 })
 
 app.post ("/login", function(req, res){
-    const response=validatInp(res.body)
+    const response=validateInp(res.body)
 
     if(!response.success){
         msg:"inputs are invalid";

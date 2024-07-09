@@ -1,0 +1,15 @@
+<html>
+    <script>
+        function func(){
+            const d=document.getElementById("btn").innerHTML;
+            const splitNum=d.split(" ")[1];
+            const num=parseInt(splitNum) + 1;
+            document.getElementById("btn").innerHTML=`COUNTER ${num}`;
+        }
+    </script>
+    <body>
+        <button id="btn" onclick="func()">COUNTER 0</button>
+
+    </body>
+
+</html>
